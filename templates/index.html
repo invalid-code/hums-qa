@@ -1,5 +1,32 @@
 {% extends "base.html" %}
+
 {% block title %}home{% endblock %}
+
+{% block navbar %}
+{% for link in [{ "link":"home", "text": "Home"}, {"link": "https://github.com/invalid-code/hums-qa", "text":"Github"}] %}
+	{% if link.link[:5] != "https" %}
+		<a href="{{ url_for(link.link) }}">{{ link.text }}</a>
+	{% else %}
+		<a href="{{ link.link }}">{{ link.text }}</a>
+	{% endif %}
+{% endfor %}
+{% endblock %}
+
 {% block content %}
-	<div>hello world</div>
+<div id="inbox">
+	<div class="email-container">
+		<div class="email">You are Invited!</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+	<div class="group">
+		<ul>
+			<li id="group-number">Group 1</li>
+			<li>Ceniza, John Marco</li>
+			<li>Ceniza, Shawn</li>
+			<li>Evangelista, Jess Mathew P.</li>
+		</ul>
+	</div>
 {% endblock %}

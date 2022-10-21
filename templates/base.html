@@ -1,9 +1,16 @@
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>{% block title %}{% endblock %}</title>
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="home.css") }}" />
 	</head>
 	<body>
 		<div id="navbar">{% block navbar %}{% endblock %}</div>
 		<div id="content">{% block content %}{% endblock %}</div>
-	</body>
+		<div id="footer">{% block footer %}{% endblock %}</div>
+		<script src="{{ url_for('static', filename='home.js') }}"></script>
+</body>
 </html>
